@@ -1,9 +1,23 @@
 import logo from "../../assets/X_logo_white.png";
 import glogo from "../../assets/google-logo.png";
 import apple from "../../assets/apple.png";
-import { Container } from "postcss";
+import { auth, provider } from "../../firebaseConfig/firebase";
+import { getAuth, getRedirectResult, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 const SignUp: React.FC = () => {
+  // firebase
+
+  const SignInWithGoogle = async () => {
+    try {
+      await auth(signInWithRedirect(provider));
+      const result = await getRedirectResult(auth);
+      // Access the signed-in user's information from 'result.user'
+      console.log(result.user);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     // <div className="flex justify-center items-center h-screen bg-black text-white">
     <div className="max-w-xxl w-auto p-0 bg-black rounded-lg flex flex-col md:flex-col lg:flex-row min-h-screen">
@@ -62,6 +76,7 @@ const SignUp: React.FC = () => {
         <button
           className="bg-white text-black flex items-center justify-center rounded-full py-2
          h-10 w-72  px-4 mb-1 shadow-md border border-gray-400"
+          onClick={() => SignInWithGoogle()}
         >
           <span className=" text-sm">Sign in with Google</span>
           <img className="w-6 h-6 mx-auto mr-0" src={glogo} alt="Google Logo" />
