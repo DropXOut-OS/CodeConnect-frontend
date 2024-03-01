@@ -1,9 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-     "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
     container: {
       center: true,
@@ -14,9 +12,10 @@ export default {
     },
     extend: {
       screens: {
-        'laptop': '1024px',
+        laptop: "1024px",
       },
       colors: {
+        createBtn: "#1d9bf0",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -72,5 +71,4 @@ export default {
     },
   },
   plugins: [],
-}
-
+};
