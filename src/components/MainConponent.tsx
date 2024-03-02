@@ -9,30 +9,30 @@ import { RiGalleryLine, RiListCheck2 } from 'react-icons/ri';
 import { SlCalender } from 'react-icons/sl';
 
 export default function MainComponent() {
-    return <main className=' flex w-[600px] h-full min-h-screen flex-col border-l-[0.5px] border-r-[0.5px] twitter-border-color'>
-        <nav className='fixed bg-black backdrop-blur-sm bg-opacity-55 font-semibold z-40 w-[600px] flex flex-row text-center border-b-[0.5px] border-r-[0.5px] twitter-border-color text-sm h-[55px]'>
+    return <main className=' flex w-[600px] h-full min-h-screen flex-col border-l-[0.5px] border-r-[0.5px] border-gray-600/50'>
+        <nav className='fixed bg-black backdrop-blur-sm bg-opacity-55 font-semibold z-40 w-[600px] flex flex-row text-center border-b-[0.5px] border-r-[0.5px] border-gray-600/50 text-sm h-[55px]'>
             <a
                 href={'#'}
                 className='h-full w-full '>
-                <div className='w-full h-full surfing-nav surfing-link-hover'>
+                <div className='w-full h-full h-full w-full px-4 pt-4 select-none hover:bg-blue-200 transition duration-200 hover:bg-opacity-15 cursor-pointer'>
                     <span className='border-b-4 border-blue-400 py-4'>For you</span>
                 </div>
             </a>
             <a
                 href={'#'}
                 className='h-full w-full'>
-                <div className='w-full h-full surfing-nav surfing-link-hover font-semibold text-gray-500'>
+                <div className='w-full h-full h-full w-full px-4 pt-4 select-none hover:bg-blue-200 transition duration-200 hover:bg-opacity-15 cursor-pointer font-semibold text-gray-500'>
                     <span className='border-b-4 border-transparent py-4'>Following</span>
                 </div>
             </a>
             <div className='flex items-center justify-center p-2'>
                 <a href={'#'}
-                    className='p-2 h-fit w-full surfing-link-hover rounded-full'>
+                    className='p-2 h-fit w-full hover:bg-blue-200 transition duration-200 hover:bg-opacity-15 cursor-pointer rounded-full'>
                     <FiSettings />
                 </a>
             </div>
         </nav>
-        <div className='mt-[55px] border-t-[0.5px] border-b-[0.5px] twitter-border-color min-h-28 pt-2 px-2 space-y-3 relative flex flex-row'>
+        <div className='mt-[55px] border-t-[0.5px] border-b-[0.5px] border-gray-600/50 min-h-28 pt-2 px-2 space-y-3 relative flex flex-row'>
             {/* logo section */}
             <div className='p-2'>
                 <div className='w-10 h-10 bg-slate-400 rounded-full'></div>
@@ -47,27 +47,27 @@ export default function MainComponent() {
                 </div>
                 <div className='w-full flex flex-row justify-between my-2 py-2'>
                     <div className='flex flex-row text-primary'>
-                        <div className='icon-hover hover:bg-blue-500 hover:bg-opacity-20'>
+                        <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-20'>
                             <RiGalleryLine className='w-[1.2rem] h-[1.2rem]' />
                         </div>
-                        <div className='icon-hover hover:bg-blue-500 hover:bg-opacity-20'>
+                        <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-20'>
                             <MdOutlineGifBox className='w-[1.2rem] h-[1.2rem]' />
                         </div>
-                        <div className='icon-hover hover:bg-blue-500 hover:bg-opacity-20'>
+                        <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-20'>
                             <RiListCheck2 className='w-[1.2rem] h-[1.2rem]' />
                         </div>
-                        <div className='icon-hover hover:bg-blue-500 hover:bg-opacity-20'>
+                        <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-20'>
                             <FaRegFaceSmile className='w-[1.2rem] h-[1.2rem]' />
                         </div>
-                        <div className='icon-hover hover:bg-blue-500 hover:bg-opacity-20'>
+                        <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-20'>
                             <SlCalender className='w-[1.2rem] h-[1.2rem]' />
                         </div>
-                        <div className='icon-hover hover:bg-blue-500 hover:bg-opacity-20'>
+                        <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-20'>
                             <LuMapPin className='w-[1.2rem] h-[1.2rem]' />
                         </div>
                     </div>
                     <button
-                        className='btn-primary p-2 px-5 text-sm'>
+                        className='font-semibold text-center hover:bg-opacity-90 transition duration-200 rounded-full bg-primary p-2 px-5 text-sm'>
                         Post
                     </button>
                 </div>
@@ -78,7 +78,7 @@ export default function MainComponent() {
 
         <div className='posts flex flex-col'>
             {Array.from({ length: 10 }).map((_, i) => (
-                <div key={i} className='flex flex-row border-t-[0.5px] twitter-border-color'>
+                <div key={i} className='flex flex-row border-t-[0.5px] border-gray-600/50'>
                     <div className='userIcon p-3 pe-1'>
                         <div className='w-10 h-10 bg-slate-400 rounded-full'></div>
                     </div>
@@ -93,7 +93,7 @@ export default function MainComponent() {
                                 <p className='text-sm text-gray-500'>1h</p>
                             </div>
                             <div className='flex flex-row items-center'>
-                                <p className='icon-hover text-gray-500 hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
+                                <p className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full text-gray-500 hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
                                     <BsThreeDots size={17} />
                                 </p>
                             </div>
@@ -107,27 +107,27 @@ export default function MainComponent() {
                         </div>
                         {/* Icons */}
                         <div className='flex flex-row w-full justify-between space-x-1 py-3 text-slate-500'>
-                            <div className='icon-hover hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
+                            <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
                                 <FaRegComment size={15} />
                                 <p className='absolute ms-[20px]'>2</p>
                             </div>
-                            <div className='icon-hover hover:bg-green-500 hover:text-green-500 hover:bg-opacity-25'>
+                            <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-green-500 hover:text-green-500 hover:bg-opacity-25'>
                                 <LuRepeat2 size={20} />
                                 <p className='absolute ms-[23px]'>10</p>
                             </div>
-                            <div className='icon-hover hover:bg-pink-500 hover:text-pink-500 hover:bg-opacity-25'>
+                            <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-pink-500 hover:text-pink-500 hover:bg-opacity-25'>
                                 <FaRegHeart size={15} />
                                 <p className='absolute ms-[20px]'>17</p>
                             </div>
-                            <div className='icon-hover hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
+                            <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
                                 <BiBarChart size={20} />
                                 <p className='absolute ms-[23px]'>188K</p>
                             </div>
                             <div className='flex flex-row '>
-                                <div className='icon-hover hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
+                                <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
                                     <FaRegBookmark size={15} />
                                 </div>
-                                <div className='icon-hover hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
+                                <div className='text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:text-blue-500 hover:bg-opacity-25'>
                                     <FiShare size={15} />
                                 </div>
                             </div>

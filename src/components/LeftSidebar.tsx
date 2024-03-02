@@ -44,7 +44,7 @@ export default function LeftSideBar() {
                     NAVIGATION_ITEMS.map((item, index) => (
                         <a href={`/${item?.title.toLocaleLowerCase()}`}
                             key={index}
-                            className={`surfing-link-hover ${index === 1 ? 'active' : ''} text-[22px] flex items-center justify-start space-x-4 rounded-3xl p-2 w-fit`}
+                            className={`hover:bg-blue-200 transition duration-200 hover:bg-opacity-15 cursor-pointer ${index === 1 ? 'font-semibold' : ''} text-[22px] flex items-center justify-start space-x-4 rounded-3xl p-2 w-fit`}
                         >
                             <div className='w-fit mx-auto flex items-center'>
                                 <item.icon size={28} />
@@ -58,12 +58,12 @@ export default function LeftSideBar() {
                         </a>
                     ))
                 }
-                <button className='xl:min-w-[220px] w-fit p-3 max-w-full m-2 text-lg btn-primary'>
+                <button className='xl:min-w-[220px] w-fit p-3 max-w-full m-2 text-lg font-semibold text-center hover:bg-opacity-90 transition duration-200 rounded-full bg-primary'>
                     <span className='hidden xl:flex w-fit mx-auto'>Post</span>
                     <span className='flex xl:hidden'><FaFeatherAlt size={25} /></span>
                 </button>
             </div>
-            <button className='rounded-full flex items-center space-x-2 bg-transparent p-3 text-center surfing-link-hover transition duration-200 xl:w-[100%] w-full h-fit xl:max-w-full justify-between'>
+            <button className='rounded-full flex items-center space-x-2 bg-transparent p-3 text-center hover:bg-blue-200 transition duration-200 hover:bg-opacity-15 cursor-pointer transition duration-200 xl:w-[100%] w-full h-fit xl:max-w-full justify-between'>
                 <div className='flex items-center space-x-2'>
                     <div className='rounded-full bg-slate-400 w-10 h-10'></div>
                     <div className='text-left text-sm hidden xl:flex xl:flex-col'>
