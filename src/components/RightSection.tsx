@@ -18,7 +18,7 @@ export default function RightSection() {
                 </div>
             </div>
             {/* Whats happening section */}
-            <div className='bg-dark-gray w-full rounded-2xl'>
+            <div className='bg-[#16181C] w-full rounded-2xl'>
                 <h3 className='text-xl font-bold p-4'>What&apos;s happening</h3>
                 <div className='flex flex-col'>
                     {
@@ -39,7 +39,7 @@ export default function RightSection() {
                                         <span>1.2M posts</span>
                                     </div>
                                 </div>
-                                <div className='p-1 icon-hover hover:bg-blue-500 hover:bg-opacity-10 hover:text-primary text-neutral-500 w-fit h-fit'>
+                                <div className='p-1 text-xs p-2 flex flex-row items-center transition duration-200 cursor-pointer rounded-full hover:bg-blue-500 hover:bg-opacity-10 hover:text-primary text-neutral-500 w-fit h-fit'>
                                     <BsThreeDots size={15} />
                                 </div>
                             </div>
@@ -52,7 +52,7 @@ export default function RightSection() {
                 </div>
             </div>
             {/* Who to follow */}
-            <div className='bg-dark-gray w-full rounded-2xl'>
+            <div className='bg-[#16181C] w-full rounded-2xl'>
                 <h3 className='text-xl font-bold p-4'>Who to follow</h3>
                 <div className='flex flex-col'>
                     {
