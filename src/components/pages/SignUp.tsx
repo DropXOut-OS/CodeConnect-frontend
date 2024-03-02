@@ -2,24 +2,33 @@ import logo from "../../assets/X_logo_white.png";
 import glogo from "../../assets/google-logo.png";
 import apple from "../../assets/apple.png";
 import { auth, provider } from "../../firebaseConfig/firebase";
-import { getAuth, getRedirectResult, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 
 const SignUp: React.FC = () => {
-  // firebase
+  const authInfoString = localStorage.getItem("auth");
+  const authInfo = authInfoString ? JSON.parse(authInfoString) : null;
+  // const currentUserPhoto = authInfo ? authInfo.profilePhoto : null;
 
   const SignInWithGoogle = async () => {
     try {
-      await auth(signInWithRedirect(provider));
-      const result = await getRedirectResult(auth);
-      // Access the signed-in user's information from 'result.user'
-      console.log(result.user);
+      const result = await signInWithPopup(auth, provider);
+
+      // console.log(result);
+      const authInfo = {
+        userID: result.user.uid,
+        name: result.user.displayName,
+        profilePhoto: result.user.photoURL,
+        isAuth: true,
+        email: result.user.email,
+      };
+      localStorage.setItem("auth", JSON.stringify(authInfo));
+      // console.log(result.user);
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    // <div className="flex justify-center items-center h-screen bg-black text-white">
     <div className="max-w-xxl w-auto p-0 bg-black rounded-lg flex flex-col md:flex-col lg:flex-row min-h-screen">
       {/* left  */}
       <div
@@ -46,19 +55,14 @@ const SignUp: React.FC = () => {
       lg:px-16
       sm:py-12
       p-10
-
       flex justify-center flex-col
-      
       mt-0 md:mt-0"
       >
         <h1
           className="text-2xl font-bold text-white mb-4
         sm:text-4xl
         md:text-5xl
-        lg:text-7xl
-        
-        
-        "
+        lg:text-7xl"
         >
           Happening now
         </h1>
@@ -66,10 +70,7 @@ const SignUp: React.FC = () => {
           className="text-2xl font-bold text-white mb-2
         sm:text-xl
         md:text-2xl
-        lg:text-3xl
-        
-        
-        "
+        lg:text-3xl"
         >
           Join today
         </h1>
@@ -115,20 +116,8 @@ const SignUp: React.FC = () => {
         <button className="bg-black text-createBtn border rounded-full py-2 px-6 w-72 mt-2">
           Sign in
         </button>
-        {/* <h2 className="text-xl font-semibold text-gray-800 mb-2">
-          Already have an account?
-        </h2> */}
-
-        {/* <p className="text-sm text-gray-600 mb-4">
-          By signing up, you agree to the Terms of Service and Privacy Policy,
-          including
-        </p> */}
-        {/* <button className="bg-black text-blue-500 rounded-full py-3 px-6 w-full md:w-auto">
-          Sign in
-        </button> */}
       </div>
     </div>
-    // </div>
   );
 };
 
