@@ -108,9 +108,7 @@ export default function LeftSideBar() {
               </div>
               <span className="text-white">{currentUserEmail}</span>
               <span
-                className="text-white text-xs cursor-pointer flex justify-start
-                hover:text-blue-700
-                "
+                className="text-white text-xs cursor-pointer flex justify-start"
                 onClick={signOutHandle}
               >
                 Sign out

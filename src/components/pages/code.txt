@@ -1,0 +1,99 @@
+<div className="md:w-1/2 mx-20 ">
+          <h1 className=" md:text-7xl text-wrap break-words  font-bold mb-4 text-4xl sm:text-6xl">
+            Happening now
+          </h1>
+          <h1 className=" text-3xl text-wrap break-words  font-bold my-10">
+            Join today.
+          </h1>
+          <button className="bg-white text-black w-72 flex items-center justify-center rounded-full py-2 px-6 mb-4 shadow-md border border-gray-400">
+            Sign in with Google
+            <img className="w-6 h-6 ms-auto" src={glogo} alt="Google Logo" />
+          </button>
+          <button className="bg-white text-black w-72 flex items-center justify-center rounded-full py-2 px-6 mb-4 shadow-md border border-gray-400">
+            <img className="w-6 h-6 me-1" src={apple} alt="Google Logo" />
+            <strong>Sign up with Apple</strong>
+          </button>
+          <div className="flex items-start justify-start">
+            <hr className="border-gray-100 my-3 w-32" />
+            <span className=" mx-2">or</span>
+            <hr className="border-gray-300 my-3 w-32" />
+          </div>
+          <button className="bg-createBtn text-white rounded-full py-2 px-6 mb-4 shadow-md w-72">
+            <strong>Create account</strong>
+          </button>
+          <p className="text-sm text-gray-600 mb-4">
+            By signing up, you agree to the Terms of Service and Privacy Policy,
+            including
+          </p>
+          <h2 className="text-xl font-semibold mb-2">
+            Already have an account?
+          </h2>
+          <button className="bg-black text-createBtn border rounded-full py-2 px-6 w-72">
+            Sign in
+          </button>
+          {/* footer links */}
+          Khurram
+          <div className="flex flex-wrap justify-between mt-4 mx-4">
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              About
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Download the X app
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Help Center
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Terms of Service
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Cookie Policy
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              MStV Transparenzangaben
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Imprint
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Accessibility
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Ads info
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Blog
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Status
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Careers
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Brand Resources
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Advertising
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Marketing
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              X for Business
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Developers
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Directory
+            </a>
+            <a href="#" className="text-gray-600 hover:text-blue-500">
+              Settings
+            </a>
+            <p className="text-gray-600 mt-4 mx-4">&copy; 2024 X Corp.</p>
+          </div>
+        </div>
