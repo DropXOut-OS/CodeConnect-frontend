@@ -18,9 +18,10 @@ module.exports = {
     },
     extend: {
       screens: {
-        'laptop': '1024px',
+        laptop: "1024px",
       },
       colors: {
+        createBtn: "#1d9bf0",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,8 +76,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar-hide")],
 };
