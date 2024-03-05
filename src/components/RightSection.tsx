@@ -9,7 +9,7 @@ export default function RightSection() {
   const currentUserEmail = authInfo ? authInfo.email : null;
 
   return (
-    <section className="sticky top-0 h-screen flex flex-col space-y-4 right-0 p-1 pe-0 ps-2 laptop:ps-8 max-h-full overflow-y-auto scrollbar-hide">
+    <section className="sticky top-0 h-screen hidden lg:flex flex-col space-y-4 right-0 p-1 pe-0 ps-2 laptop:ps-8 max-h-full overflow-y-auto scrollbar-hide">
       {/* Search box section */}
       <div>
         <div className="relative w-full h-full">

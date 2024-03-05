@@ -84,7 +84,7 @@ export default function LeftSideBar() {
               )}
             </a>
           ))}
-          <button className="xl:min-w-[220px] w-fit p-3 max-w-full m-2 text-lg btn-primary">
+          <button className="xl:min-w-[220px] w-fit p-3 max-w-full m-2 text-lg btn-primary mx-3">
             <span className="hidden xl:flex w-fit mx-auto">Post</span>
             <span className="flex xl:hidden">
               <FaFeatherAlt size={25} />

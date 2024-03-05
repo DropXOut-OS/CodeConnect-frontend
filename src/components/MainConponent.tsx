@@ -16,7 +16,7 @@ export default function MainComponent() {
   const currentUserEmail = authInfo ? authInfo.email : null;
 
   return (
-    <main className=" flex w-[600px] h-full min-h-screen flex-col border-l-[0.5px] border-r-[0.5px] twitter-border-color">
+    <main className=" flex min-w-[600px] max-w-[600px] h-full min-h-screen flex-col border-l-[0.5px] border-r-[0.5px] twitter-border-color">
       <nav className="fixed bg-black backdrop-blur-sm bg-opacity-55 font-semibold z-40 w-[600px] flex flex-row text-center border-b-[0.5px] border-r-[0.5px] twitter-border-color text-sm h-[55px]">
         <a href={"#"} className="h-full w-full ">
           <div className="w-full h-full surfing-nav surfing-link-hover">

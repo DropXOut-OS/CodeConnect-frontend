@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
-import { Routes } from "react-router-dom";
-import { Route } from "react-router-dom";
-import { auth } from "../firebaseConfig/firebase";
+import LeftSideBar from "@/components/LeftSidebar";
+import RightSection from "@/components/RightSection";
 import { onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import MainApp from "../MainApp";
 import SignUp from "../components/pages/SignUp";
+import { auth } from "../firebaseConfig/firebase";
 import PageNotFound from "./PageNotFound";
 export const AllRoutes = () => {
   // console.log(auth);
@@ -25,12 +26,24 @@ export const AllRoutes = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full">
       <Routes>
-        <Route path="/" element={isAuthenticated ? <MainApp /> : <SignUp />} />
+        <Route path="/" element={isAuthenticated ?
+          <div className="max-w-screen-lg laptop:max-w-screen-xl w-full h-full flex flex-row justify-center relative">
+            <LeftSideBar />
+            <MainApp />
+            <RightSection />
+          </div>
+          : <SignUp />} />
         {/* <Route path="/" element={<MainApp />} /> */}
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="*" element={
+          <div className="max-w-screen-lg laptop:max-w-screen-xl w-full h-full flex flex-row justify-center relative">
+            <LeftSideBar />
+            <PageNotFound />
+            <RightSection />
+          </div>
+        } />
       </Routes>
     </div>
   );
