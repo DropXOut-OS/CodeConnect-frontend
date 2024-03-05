@@ -4,7 +4,11 @@ import { AllRoutes } from "./utils/AllRoutes";
 function App() {
   return (
     <BrowserRouter>
-      <AllRoutes />
+      <div className="h-full w-full min-h-screen bg-black text-white">
+        <div className="container w-full h-full flex justify-center items-center relative">
+          <AllRoutes />
+        </div>
+      </div>
     </BrowserRouter>
   );
 }

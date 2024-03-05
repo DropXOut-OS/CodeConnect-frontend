@@ -8,12 +8,12 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA6_0hioySCGymxGRz0-PRwb3RHUTMGVMI",
-  authDomain: "code-connect-c7c29.firebaseapp.com",
-  projectId: "code-connect-c7c29",
-  storageBucket: "code-connect-c7c29.appspot.com",
-  messagingSenderId: "458054152376",
-  appId: "1:458054152376:web:4b01ae05f6a713303b044d",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
