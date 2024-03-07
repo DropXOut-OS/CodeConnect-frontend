@@ -104,11 +104,11 @@ export default function LeftSideBar() {
             </div>
             <div className="text-left text-sm hidden xl:flex xl:flex-col">
               <div className="font-semibold whitespace-nowrap">
-                {currentUserName}
+                <span className=" text-md">{currentUserName}</span>
               </div>
-              <span className="text-white">{currentUserEmail}</span>
+              <span className="text-userColor">{currentUserEmail}</span>
               <span
-                className="text-white text-xs cursor-pointer flex justify-start"
+                className="text-userCo text-xs cursor-pointer flex justify-start"
                 onClick={signOutHandle}
               >
                 Sign out

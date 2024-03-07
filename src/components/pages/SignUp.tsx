@@ -12,6 +12,7 @@ const SignUp: React.FC = () => {
   const SignInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
+      // console.log(result);
 
       // console.log(result);
       const authInfo = {
@@ -22,9 +23,10 @@ const SignUp: React.FC = () => {
         email: result.user.email,
       };
       localStorage.setItem("auth", JSON.stringify(authInfo));
-      // console.log(result.user);
+      console.log(result.user);
     } catch (error) {
       console.error(error);
+      alert(error);
     }
   };
 
