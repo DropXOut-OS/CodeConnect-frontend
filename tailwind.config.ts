@@ -21,6 +21,7 @@ module.exports = {
         laptop: "1024px",
       },
       colors: {
+        userColor: "#71717a",
         createBtn: "#1d9bf0",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

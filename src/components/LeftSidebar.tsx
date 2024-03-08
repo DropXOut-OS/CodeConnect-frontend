@@ -35,32 +35,43 @@ export default function LeftSideBar() {
     {
       title: "Twitter",
       icon: BsTwitter,
+      route: "/",
     },
     {
       title: "Home",
       icon: MdHomeFilled,
+      route: "/",
     },
     {
       title: "Explore",
       icon: FiSearch,
+      route: "explore",
     },
     {
       title: "Notifications",
       icon: BsBell,
+      route: "notifications",
     },
     {
       title: "Messages",
       icon: BsEnvelope,
+      route: "messages",
     },
     {
       title: "Bookmarks",
       icon: BsBookmark,
+      route: "bookmarks",
     },
     {
       title: "Profile",
       icon: BiUser,
+      route: "profile",
     },
   ];
+
+  const handleNavigation = (route) => {
+    navigate(route);
+  };
 
   return (
     <>
@@ -68,7 +79,8 @@ export default function LeftSideBar() {
         <div className="flex flex-col xl:pe-3 items-center xl:items-stretch h-full space-y-3 my-2 w-fit xl:w-full">
           {NAVIGATION_ITEMS.map((item, index) => (
             <a
-              href={`/${item?.title.toLocaleLowerCase()}`}
+              // href={`/${item?.title.toLocaleLowerCase()}`}
+              onClick={() => handleNavigation(item.route)}
               key={index}
               className={`surfing-link-hover ${
                 index === 1 ? "active" : ""
@@ -104,11 +116,11 @@ export default function LeftSideBar() {
             </div>
             <div className="text-left text-sm hidden xl:flex xl:flex-col">
               <div className="font-semibold whitespace-nowrap">
-                {currentUserName}
+                <span className=" text-md">{currentUserName}</span>
               </div>
-              <span className="text-white">{currentUserEmail}</span>
+              <span className="text-userColor">{currentUserEmail}</span>
               <span
-                className="text-white text-xs cursor-pointer flex justify-start"
+                className="text-userCo text-xs cursor-pointer flex justify-start"
                 onClick={signOutHandle}
               >
                 Sign out
