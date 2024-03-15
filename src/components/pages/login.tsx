@@ -1,18 +1,37 @@
 import { XIcon } from "lucide-react";
+import React from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import logo from "../../assets/X_logo_white.png";
 import apple from "../../assets/apple.png";
 import GoogleLoginButton from "../button/googleLogin";
+import TextAlert from "../alert/text-alert";
+
+type Inputs = {
+    name: string
+    phone: string
+    email: string
+}
 
 const Login: React.FC = () => {
+
+    const [isEmailAuth, setIsEmailAuth] = React.useState(false);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<Inputs>()
+    const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+
     return (
         <>
+            {/* Exit */}
             <div>
                 <a href="/" className="text-white absolute left-10 top-10">
                     <XIcon />
                 </a>
             </div>
             <div className="w-full bg-black text-slate-200 rounded-lg flex items-center flex-col min-h-screen p-5 py-10 space-y-10">
-                {/* Exit */}
                 <div
                     className="">
                     <img className="w-10" src={logo} alt="Logo" />
@@ -43,14 +62,74 @@ const Login: React.FC = () => {
                     </div>
 
                     <form
+                        onSubmit={handleSubmit(onSubmit)}
                         className="flex flex-col space-y-5"
                     >
-                        <div className="relative group w-full border-[1px] rounded border-slate-800 p-[0.75rem] focus-within:p-[0.70rem] focus-within:border-2 focus-within:border-blue-600">
-                            <input type="text" id="username" required className="w-full h-10 text-sm peer bg-transparent outline-none m-0" />
-                            <label htmlFor="username" className="transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-lg group-focus-within:text-xs group-focus-within:text-blue-500 peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-1 group-focus-within peer-valid:-translate-y-1 group-focus-within:pl-2 peer-valid:pl-2 text-slate-500">Phone, email or username</label>
+                        <div className="input-items">
+                            {
+                                !isEmailAuth ?
+                                    <div className="input-group group focus-within:p-[0.70rem] focus-within:border-2 focus-within:border-blue-600">
+                                        <input type="number" id="phone"
+                                            className="input peer"
+                                            required={!isEmailAuth}
+                                            {...register("phone", {
+                                                required: !isEmailAuth,
+                                                maxLength: 10,
+                                                minLength: 10,
+                                            })}
+                                        />
+                                        <label htmlFor="phone"
+                                            className="input-label group-focus-within:text-xs group-focus-within:text-blue-500 peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-1 group-focus-within peer-valid:-translate-y-1 group-focus-within:pl-2 peer-valid:pl-2">Phone</label>
+                                    </div>
+                                    :
+                                    <div className="input-group group focus-within:p-[0.70rem] focus-within:border-2 focus-within:border-blue-600">
+                                        <input type="email" id="email"
+                                            className="input peer"
+                                            required={isEmailAuth}
+                                            {...register("email", {
+                                                required: isEmailAuth,
+                                                maxLength: 80,
+                                                minLength: 5,
+                                            })}
+                                        />
+                                        <label htmlFor="email" className="input-label group-focus-within:text-xs group-focus-within:text-blue-500 peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-1 group-focus-within peer-valid:-translate-y-1 group-focus-within:pl-2 peer-valid:pl-2">Email</label>
+                                    </div>
+                            }
+                            {
+                                !isEmailAuth ?
+                                    errors.phone?.type === "required" && <TextAlert alert="Phone is required" />
+                                    :
+                                    errors.email?.type === "required" && <TextAlert alert="Email is required" />
+                            }
+                            {
+                                !isEmailAuth ?
+                                    errors.phone?.type === "maxLength" && <TextAlert alert="Phone is too long" />
+                                    :
+                                    errors.email?.type === "maxLength" && <TextAlert alert="Email is too long" />
+                            }
+                            {
+                                !isEmailAuth ?
+                                    errors.phone?.type === "minLength" && <TextAlert alert="Phone is too short" />
+                                    :
+                                    errors.email?.type === "minLength" && <TextAlert alert="Email is too short" />
+                            }
+                            <div className="flex justify-end w-full">
+                                <button
+                                    type="button"
+                                    onClick={() => setIsEmailAuth(!isEmailAuth)}
+                                    className="text-blue-500 my-2 w-fit hover:underline">
+                                    {
+                                        !isEmailAuth ?
+                                            <span>Use email instead</span>
+                                            :
+                                            <span>Use phone instead</span>
+                                    }
+                                </button>
+                            </div>
                         </div>
 
                         <button
+                            type="submit"
                             className="bg-white hover:bg-slate-200 text-slate-800 flex items-center justify-center rounded-full py-1 h-10 w-72 px-4 mb-1 shadow-md"
                         >
                             <strong className=" text-sm">Next</strong>

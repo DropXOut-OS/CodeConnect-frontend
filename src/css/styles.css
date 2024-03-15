@@ -22,3 +22,12 @@
   .active {
     @apply font-semibold;
   }
+  .input{
+    @apply w-full h-10 text-sm bg-transparent outline-none m-0;
+  }
+  .input-group{
+    @apply relative w-full border-[1px] rounded border-slate-800 p-[0.75rem] ;
+  }
+  .input-label{
+    @apply transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-lg text-slate-500;
+  }
