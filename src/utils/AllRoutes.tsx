@@ -8,7 +8,7 @@ import MainApp from "../MainApp";
 import { default as Auth } from "../components/pages/auth";
 import { auth } from "../firebaseConfig/firebase";
 import PageNotFound from "./PageNotFound";
-import SignUp from "@/components/pages/signup";
+import SignUp from "@/components/pages/signup/signup";
 export const AllRoutes = () => {
   // console.log(auth);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
